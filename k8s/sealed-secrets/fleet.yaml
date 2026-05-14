@@ -1,0 +1,13 @@
+defaultNamespace: kube-system
+helm:
+  releaseName: sealed-secrets
+  repo: https://bitnami-labs.github.io/sealed-secrets
+  chart: sealed-secrets
+  version: "2.16.2"
+targetCustomizations:
+- name: all-clusters
+  clusterSelector: {}
+
+
+# Verify the controller is running: 
+# kubectl get pods -n kube-system | grep sealed
